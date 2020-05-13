@@ -10,100 +10,37 @@ namespace Context.AccountClasses
 {
     public class NotificationsSettings
     {
-        public NotificationsSettings()
-        {
-            PageFactory.InitElements(PropertiesCollection.driver, this);
-        }
 
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[1]/button")]
-        public IWebElement toNtfcTransactionalEmail { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[1]/div[1]/button")]
-        public IWebElement toNtfcNewMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[2]/div[1]/button")]
-        public IWebElement toNtfcMeetingAutomaticallyAccepted { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[3]/div[1]/button")]
-        public IWebElement toNtfcMeetingScheduled { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[4]/div[1]/button")]
-        public IWebElement toNtfcMeetingDeclined { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[5]/div[1]/button")]
-        public IWebElement toNtfcMeetingCanceled { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[6]/div[1]/button")]
-        public IWebElement toNtfcMeetingUpdated { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[7]/div[1]/button")]
-        public IWebElement toNtfcMeetingConfirmed { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[8]/div[1]/button")]
-        public IWebElement toNtfcMeetingRequested { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[9]/div[1]/button")]
-        public IWebElement toNtfcNewAlert { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[1]/button")]
-        public IWebElement toNtfcBatchEmail { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[1]/div[1]/button")]
-        public IWebElement toBNtfcMeetingScheduled { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[2]/div[1]/button")]
-        public IWebElement toBNtfcMeetingDeclined { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[3]/div[1]/button")]
-        public IWebElement toBNtfcMeetingCanceled { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[4]/div[1]/button")]
-        public IWebElement toBNtfcMeetingUpdated { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[5]/div[1]/button")]
-        public IWebElement toBNtfcMeetingConfirmed { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[6]/div[1]/button")]
-        public IWebElement toBNtfcMeetingRequested { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[7]/div[1]/button")]
-        public IWebElement toBNtfcMeetingAutomaticallyAccepted { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[8]/div[1]/button")]
-        public IWebElement toBNtfcNewMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[9]/div[1]/button")]
-        public IWebElement toBNtfcNewAlert { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[2]/div[3]/div/div[1]/button")]
-        public IWebElement toNtfcPushNotifications { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[1]/div[1]/button")]
-        public IWebElement toPNtfcMeetingRequested { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[2]/div[1]/button")]
-        public IWebElement toPNtfcNewMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[3]/div[1]/button")]
-        public IWebElement toPNtfcMeetingAutomaticallyAccepted { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[4]/div[1]/button")]
-        public IWebElement toPNtfcMeetingScheduled { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[5]/div[1]/button")]
-        public IWebElement toPNtfcMeetingDeclined { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[6]/div[1]/button")]
-        public IWebElement toPNtfcMeetingCanceled { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[7]/div[1]/button")]
-        public IWebElement toPNtfcMeetingUpdated { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[8]/div[1]/button")]
-        public IWebElement toPNtfcMeetingConfirmed { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[9]/div[1]/button")]
-        public IWebElement toPNtfcNewAlert { get; set; }
+        public IWebElement toNtfcTransactionalEmail => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[1]/button"));
+        public IWebElement toNtfcNewMessage => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[1]/div[1]/button"));
+        public IWebElement toNtfcMeetingAutomaticallyAccepted => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[1]/div[1]/button"));
+        public IWebElement toNtfcMeetingScheduled => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[3]/div[1]/button"));
+        public IWebElement toNtfcMeetingDeclined => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[4]/div[1]/button"));
+        public IWebElement toNtfcMeetingCanceled => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[5]/div[1]/button"));
+        public IWebElement toNtfcMeetingUpdated => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[6]/div[1]/button"));
+        public IWebElement toNtfcMeetingConfirmed => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[7]/div[1]/button"));
+        public IWebElement toNtfcMeetingRequested => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[8]/div[1]/button"));
+        public IWebElement toNtfcNewAlert => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[1]/div/div[3]/div[9]/div[1]/button"));
+        public IWebElement toNtfcBatchEmail => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[1]/button"));
+        public IWebElement toBNtfcMeetingScheduled => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[1]/div[1]/button"));
+        public IWebElement toBNtfcMeetingDeclined => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[2]/div[1]/button"));
+        public IWebElement toBNtfcMeetingCanceled => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[3]/div[1]/button"));
+        public IWebElement toBNtfcMeetingUpdated => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[4]/div[1]/button"));
+        public IWebElement toBNtfcMeetingConfirmed => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[5]/div[1]/button"));
+        public IWebElement toBNtfcMeetingRequested => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[6]/div[1]/button"));
+        public IWebElement toBNtfcMeetingAutomaticallyAccepted => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[7]/div[1]/button"));
+        public IWebElement toBNtfcNewMessage => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[8]/div[1]/button"));
+        public IWebElement toBNtfcNewAlert => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[3]/div[2]/div/div[3]/div[9]/div[1]/button"));
+        public IWebElement toNtfcPushNotifications => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[2]/div[3]/div/div[1]/button"));
+        public IWebElement toPNtfcMeetingRequested => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[1]/div[1]/button"));
+        public IWebElement toPNtfcNewMessage => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[2]/div[1]/button"));
+        public IWebElement toPNtfcMeetingAutomaticallyAccepted => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[3]/div[1]/button"));
+        public IWebElement toPNtfcMeetingScheduled => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[4]/div[1]/button"));
+        public IWebElement toPNtfcMeetingDeclined => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[5]/div[1]/button"));
+        public IWebElement toPNtfcMeetingCanceled => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[6]/div[1]/button"));
+        public IWebElement toPNtfcMeetingUpdated => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[7]/div[1]/button"));
+        public IWebElement toPNtfcMeetingConfirmed => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[8]/div[1]/button"));
+        public IWebElement toPNtfcNewAlert => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[3]/div/div[3]/div[9]/div[1]/button"));
 
 
         public void NtfcTransactionalEmailForm()

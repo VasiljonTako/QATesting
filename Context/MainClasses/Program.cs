@@ -77,6 +77,15 @@ namespace Context
         }
 
         [Test]
+        public void ExecuteTestToCalendar()
+        {
+            ExecuteTestLogin();
+            System.Threading.Thread.Sleep(1000);
+            Dashboard pageDashboard = new Dashboard();
+            pageDashboard.CalendarForm();
+        }
+
+        [Test]
         public void ExecuteTestToCompany()
         {
             ExecuteTestLogin();
@@ -394,7 +403,7 @@ namespace Context
             ExecuteTestToCompany();
             System.Threading.Thread.Sleep(2000);
             CompanyColleagueEdit CompanyColleagueEdit1 = new CompanyColleagueEdit();
-            CompanyColleagueEdit1.ColleagueYourselfForm();
+            CompanyColleagueEdit1.ColleagueYourselfActionsForm();
             System.Threading.Thread.Sleep(2000);
             CompanyColleagueEdit1.ColleagueYourselfEditProfileForm();
             System.Threading.Thread.Sleep(2000);

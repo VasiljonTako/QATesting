@@ -10,86 +10,33 @@ namespace Context
 {
     public class PersonalSettings
     {
-        public PersonalSettings()
-        {
-            PageFactory.InitElements(PropertiesCollection.driver, this);
-        }
 
-        [FindsBy(How = How.Id, Using = "firstName")]
-        public IWebElement toFirstName { get; set; }
+        public IWebElement toFirstName => PropertiesCollection.driver.FindElement(By.Id("firstName"));
+        public IWebElement toLastName => PropertiesCollection.driver.FindElement(By.Id("lastName"));
+        public IWebElement toEmail => PropertiesCollection.driver.FindElement(By.Id("email"));
+        public IWebElement toJobTitle => PropertiesCollection.driver.FindElement(By.Id("jobTitle"));
+        public IWebElement toJobLevel => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[5]/div"));
+        public IWebElement toJobLevelValue => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[3]/div/div/div/ul/li[2]"));
+        public IWebElement toJobFunction => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[6]/div"));
+        public IWebElement toJobFunctionValue => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[4]/div/div/div/ul/li[2]"));
+        public IWebElement toWorkPhone => PropertiesCollection.driver.FindElement(By.Id("workPhone"));
+        public IWebElement toWorkExtension => PropertiesCollection.driver.FindElement(By.Id("workExtension"));
+        public IWebElement toMobilePhone => PropertiesCollection.driver.FindElement(By.Id("mobilePhone"));
+        public IWebElement toContinent => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[1]/div"));
+        public IWebElement toContinentValue => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[5]/div/div/div/ul/li[3]"));
+        public IWebElement toCountry => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[2]/div"));
+        public IWebElement toCountryValue => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[6]/div/div/div/ul/li[1]"));
+        public IWebElement toZipCode => PropertiesCollection.driver.FindElement(By.Id("zipCode"));
+        public IWebElement toZipCodeSEarchBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[3]/span/span/span/button"));
+        public IWebElement toState => PropertiesCollection.driver.FindElement(By.Id("state"));
+        public IWebElement toCity => PropertiesCollection.driver.FindElement(By.Id("city"));
+        public IWebElement toAddress1 => PropertiesCollection.driver.FindElement(By.Id("address1"));
+        public IWebElement toAddress2 => PropertiesCollection.driver.FindElement(By.Id("address2"));
+        public IWebElement toAddress3 => PropertiesCollection.driver.FindElement(By.Id("address3"));
+        public IWebElement toCancelPersonalSettings => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[3]/div[2]/button[1]"));
+        public IWebElement toSavePersonalSettings => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[3]/div[2]/button[2]"));
+        public IWebElement toUploadPhoto => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[3]/div/span/div/span/img"));
 
-        [FindsBy(How = How.Id, Using = "lastName")]
-        public IWebElement toLastName { get; set; }
-
-        [FindsBy(How = How.Id, Using = "email")]
-        public IWebElement toEmail { get; set; }
-
-        [FindsBy(How = How.Id, Using = "jobTitle")]
-        public IWebElement toJobTitle { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[5]/div")]
-        public IWebElement toJobLevel { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div/div/div/ul/li[2]")]
-        public IWebElement toJobLevelValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[6]/div")]
-        public IWebElement toJobFunction { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[4]/div/div/div/ul/li[2]")]
-        public IWebElement toJobFunctionValue { get; set; }
-
-        [FindsBy(How = How.Id, Using = "workPhone")]
-        public IWebElement toWorkPhone { get; set; }
-
-        [FindsBy(How = How.Id, Using = "workExtension")]
-        public IWebElement toWorkExtension { get; set; }
-
-        [FindsBy(How = How.Id, Using = "mobilePhone")]
-        public IWebElement toMobilePhone { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[1]/div")]
-        public IWebElement toContinent { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[5]/div/div/div/ul/li[3]")]
-        public IWebElement toContinentValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[2]/div")]
-        public IWebElement toCountry { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[6]/div/div/div/ul/li[1]")]
-        public IWebElement toCountryValue { get; set; }
-
-        [FindsBy(How = How.Id, Using = "zipCode")]
-        public IWebElement toZipCode { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[3]/span/span/span/button")]
-        public IWebElement toZipCodeSEarchBtn { get; set; }
-
-        [FindsBy(How = How.Id, Using = "state")]
-        public IWebElement toState { get; set; }
-
-        [FindsBy(How = How.Id, Using = "city")]
-        public IWebElement toCity { get; set; }
-
-        [FindsBy(How = How.Id, Using = "address1")]
-        public IWebElement toAddress1 { get; set; }
-
-        [FindsBy(How = How.Id, Using = "address2")]
-        public IWebElement toAddress2 { get; set; }
-
-        [FindsBy(How = How.Id, Using = "address3")]
-        public IWebElement toAddress3 { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[3]/div[2]/button[1]")]
-        public IWebElement toCancelPersonalSettings { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[3]/div[2]/button[2]")]
-        public IWebElement toSavePersonalSettings { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[3]/div/span/div/span/img")]
-        public IWebElement toUploadPhoto { get; set; }
-       
         public void FirstNameForm(string firstnamevalue)
         {
             toFirstName.Click();

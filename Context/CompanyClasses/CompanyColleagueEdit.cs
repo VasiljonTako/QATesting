@@ -11,46 +11,18 @@ namespace Context.CompanyClasses
     public class CompanyColleagueEdit
     {
 
-        public CompanyColleagueEdit()
-        {
-            PageFactory.InitElements(PropertiesCollection.driver, this);
-        }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[1]/a")]
-        public IWebElement toColleague { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[4]/td[1]/a")]
-        public IWebElement toColleagueYourself { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[4]/button")]
-        public IWebElement toColleagueActions { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[2]/td[4]/button")]
-        public IWebElement toColleagueYourselfActions { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div/div/ul/li[1]")]
-        public IWebElement toColleagueViewProfile { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[4]/div/div/ul/li[1]")]
-        public IWebElement toColleagueYourselfViewProfile { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div/div/ul/li[3]")]
-        public IWebElement toColleagueMakeAdmin { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[4]/div/div/ul/li[3]")]
-        public IWebElement toColleagueYourselfMakeAdmin { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div/div/ul/li[5]")]
-        public IWebElement toColleagueDeleteUser { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[4]/div/div/ul/li[5]")]
-        public IWebElement toColleagueYourselfDeleteUser { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div[1]/div[3]/button")]
-        public IWebElement toColleagueEditProfile { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div[1]/div[3]/button")]
-        public IWebElement toColleagueYourselfEditProfile { get; set; }
+        public IWebElement toColleague => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[1]/a"));
+        public IWebElement toColleagueYourself => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[4]/td[1]/a"));
+        public IWebElement toColleagueActions => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[4]/button"));
+        public IWebElement toColleagueYourselfActions => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[4]/td[4]/button"));
+        public IWebElement toColleagueViewProfile => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[1]"));
+        public IWebElement toColleagueYourselfViewProfile => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[4]/div/div/ul/li[1]"));
+        public IWebElement toColleagueMakeAdmin => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[3]"));
+        public IWebElement toColleagueYourselfMakeAdmin => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[4]/div/div/ul/li[3]"));
+        public IWebElement toColleagueDeleteUser => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]"));
+        public IWebElement toColleagueYourselfDeleteUser => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[4]/div/div/ul/li[5]"));
+        public IWebElement toColleagueEditProfile => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div[1]/div[3]/button"));
+        public IWebElement toColleagueYourselfEditProfile => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div[1]/div[3]/button"));
 
 
 
@@ -87,6 +59,7 @@ namespace Context.CompanyClasses
 
         public void ColleagueYourselfForm()
         {
+            System.Threading.Thread.Sleep(2000);
             toColleagueYourself.Click();
         }
 

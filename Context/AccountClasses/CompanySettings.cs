@@ -10,100 +10,36 @@ namespace Context.AccountClasses
 {
     public class CompanySettings
     {
-        public CompanySettings()
-        {
-            PageFactory.InitElements(PropertiesCollection.driver, this);
-        }
-
-        [FindsBy(How = How.Id, Using = "name")]
-        public IWebElement toCompanyName { get; set; }
-
-        [FindsBy(How = How.Id, Using = "companyWebsite")]
-        public IWebElement toCompanyWebsite { get; set; }
-
-        [FindsBy(How = How.Id, Using = "companyDescription")]
-        public IWebElement toCompanyDescription { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[4]/div")]
-        public IWebElement toPrimaryInvestorCompany { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div/div/div/ul/li[5]")]
-        public IWebElement toPrimaryInvestorCompanyValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[5]/div/label[1]")]
-        public IWebElement toSecondaryInvestorCompany { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[5]/div/label[2]")]
-        public IWebElement toSecondaryInvestorCompany1 { get; set; }
-
-        [FindsBy(How = How.Id, Using = "companyAllocator.portfolioSize")]
-        public IWebElement toPortofolioSize { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[7]/div/div/label[1]")]
-        public IWebElement toFundDomicileInterest { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[7]/div/div/label[2]")]
-        public IWebElement toFundDomicileInterest1 { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[7]/div/div[2]/div/label[1]")]
-        public IWebElement toFundDomicileInterest1Value { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[8]/div/label[2]")]
-        public IWebElement toInvestmentVehicleInterest { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[8]/div/label[5]")]
-        public IWebElement toInvestmentVehicleInterest1 { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[9]/div[2]/label[1]/span[1]/input")]
-        public IWebElement toFirstLossCapitalYes { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[9]/div[2]/label[2]/span[1]/input")]
-        public IWebElement toFirstLossCapitalNo { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div/section/section/main/div/div/div/div[1]/div[2]/div[10]/button")]
-        public IWebElement toEditPreferences { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[1]/div/div")]
-        public IWebElement toCompanyContinent { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div/div/div/ul/li[4]")]
-        public IWebElement toCompanyContinentValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[2]/div")]
-        public IWebElement toCompanyCountry { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[4]/div/div/div/ul/li[6]")]
-        public IWebElement toCompanyCountryValue { get; set; }
-
-        [FindsBy(How = How.Id, Using = "zipCode")]
-        public IWebElement toCompanyZipCode { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[3]/span/span/span/button")]
-        public IWebElement toSearchCompanyZipCode { get; set; }
-
-        [FindsBy(How = How.Id, Using = "state")]
-        public IWebElement toCompanyState { get; set; }
-
-        [FindsBy(How = How.Id, Using = "city")]
-        public IWebElement toCompanyCity { get; set; }
-
-        [FindsBy(How = How.Id, Using = "address1")]
-        public IWebElement toCompanyAddress1 { get; set; }
-
-        [FindsBy(How = How.Id, Using = "address2")]
-        public IWebElement toCompanyAddress2 { get; set; }
-
-        [FindsBy(How = How.Id, Using = "address1")]
-        public IWebElement toCompanyAddress3 { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[3]/div[2]/button[2]")]
-        public IWebElement toSaveCompanySettings { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[3]/div[2]/button[1]")]
-        public IWebElement toCancelSaveCompanySettings { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "/html/body/div[1]/section/section/main/div/div/div/div[1]/div[3]/div/span/div/span")]
-        public IWebElement toUploadCompanyPhoto { get; set; }
+        public IWebElement toCompanyName => PropertiesCollection.driver.FindElement(By.Id("name"));
+        public IWebElement toCompanyWebsite => PropertiesCollection.driver.FindElement(By.Id("companyWebsite"));
+        public IWebElement toCompanyDescription => PropertiesCollection.driver.FindElement(By.Id("companyDescription"));
+        public IWebElement toPrimaryInvestorCompany => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[4]/div"));
+        public IWebElement toPrimaryInvestorCompanyValue => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[3]/div/div/div/ul/li[5]"));
+        public IWebElement toSecondaryInvestorCompany => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[5]/div/label[1]"));
+        public IWebElement toSecondaryInvestorCompany1 => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[5]/div/label[2]"));
+        public IWebElement toPortofolioSize => PropertiesCollection.driver.FindElement(By.Id("companyAllocator.portfolioSize"));
+        public IWebElement toFundDomicileInterest => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[7]/div/div/label[1]"));
+        public IWebElement toFundDomicileInterest1 => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[7]/div/div/label[2]"));
+        public IWebElement toFundDomicileInterest1Value => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[7]/div/div[2]/div/label[1]"));
+        public IWebElement toInvestmentVehicleInterest => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[8]/div/label[2]"));
+        public IWebElement toInvestmentVehicleInterest1 => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[8]/div/label[5]"));
+        public IWebElement toFirstLossCapitalYes => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[9]/div[2]/label[1]/span[1]/input"));
+        public IWebElement toFirstLossCapitalNo => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[2]/div[9]/div[2]/label[2]/span[1]/input"));
+        public IWebElement toEditPreferences => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div/div/div[1]/div[2]/div[10]/button"));
+        public IWebElement toCompanyContinent => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[1]/div/div"));
+        public IWebElement toCompanyContinentValue => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[3]/div/div/div/ul/li[4]"));
+        public IWebElement toCompanyCountry => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[2]/div"));
+        public IWebElement toCompanyCountryValue => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[4]/div/div/div/ul/li[6]"));
+        public IWebElement toCompanyZipCode => PropertiesCollection.driver.FindElement(By.Id("zipCode"));
+        public IWebElement toSearchCompanyZipCode => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[2]/div[2]/div[3]/span/span/span/button"));
+        public IWebElement toCompanyState => PropertiesCollection.driver.FindElement(By.Id("state"));
+        public IWebElement toCompanyCity => PropertiesCollection.driver.FindElement(By.Id("city"));
+        public IWebElement toCompanyAddress1 => PropertiesCollection.driver.FindElement(By.Id("address1"));
+        public IWebElement toCompanyAddress2 => PropertiesCollection.driver.FindElement(By.Id("address2"));
+        public IWebElement toCompanyAddress3 => PropertiesCollection.driver.FindElement(By.Id("address1"));
+        public IWebElement toSaveCompanySettings => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[3]/div[2]/button[2]"));
+        public IWebElement toCancelSaveCompanySettings => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[3]/div[2]/button[1]"));
+        public IWebElement toUploadCompanyPhoto => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div/div[1]/div[3]/div/span/div/span"));
 
         public void CompanyNameForm(string companynamevalue)
         {
