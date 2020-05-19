@@ -12,8 +12,8 @@ namespace Context.CompanyClasses
     {
 
         public IWebElement toColleague => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[1]/a"));
-        public IWebElement toColleagueYourself => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[4]/td[1]/a"));
-        public IWebElement toColleagueActions => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[4]/button"));
+        public IWebElement toColleagueYourself => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[4]/td[1]"));
+        public IWebElement toColleagueActions => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[4]/td[4]/button"));
         public IWebElement toColleagueYourselfActions => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[2]/div[3]/div/div[2]/div/div/div/div/div/table/tbody/tr[4]/td[4]/button"));
         public IWebElement toColleagueViewProfile => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[1]"));
         public IWebElement toColleagueYourselfViewProfile => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[4]/div/div/ul/li[1]"));
@@ -59,7 +59,6 @@ namespace Context.CompanyClasses
 
         public void ColleagueYourselfForm()
         {
-            System.Threading.Thread.Sleep(2000);
             toColleagueYourself.Click();
         }
 

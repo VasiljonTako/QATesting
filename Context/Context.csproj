@@ -68,6 +68,7 @@
     <Compile Include="SummitsClasses\Attendees.cs" />
     <Compile Include="DashboardClasses\Dashboard.cs" />
     <Compile Include="LoginClass\Login.cs" />
+    <Compile Include="SummitsClasses\FundProfile.cs" />
     <Compile Include="SummitsClasses\Meetings.cs" />
     <Compile Include="MainClasses\Program.cs" />
     <Compile Include="MainClasses\PropertiesCollection.cs" />

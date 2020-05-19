@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,11 @@ namespace Context
         public IWebElement searchInFundsField => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/header/div/div[2]/span/input"));
         public IWebElement cancelSearchInFundsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/header/div/div[2]/span/span/i[1]"));
         public IWebElement customizeColumnsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/header/div/div[2]/button[1]"));
+        public IWebElement BroadStrategyGroup => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[16]/div/div[2]/div/div/div[2]/div/div[2]/div[2]/label/span[1]/input"));       
+        public IWebElement fromBroadStrategyGroup => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[16]/div/div[2]/div/div/div[2]/div/div[2]/div[12]"));
+        public IWebElement toSubStrategy => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[16]/div/div[2]/div/div/div[2]/div/div[2]/div[6]"));
         public IWebElement showFavouriteFundsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/header/div/div[2]/button[2]"));
-        public IWebElement sortByFundNameBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/header/div/div[2]/button[2]"));
+        public IWebElement sortByFundNameBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/div[3]/div/div/div/div/div/div[1]/div[2]/div[1]/table/thead/tr/th[3]"));
         public IWebElement FilterMenuBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/div[3]/div/div/div/div/div/div[1]/div[2]/div[1]/table/thead/tr/th[3]/i"));
         public IWebElement FilterPendingBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[15]/div/div/div/ul/li[1]"));
         public IWebElement FilterConfirmedBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[15]/div/div/div/ul/li[2]"));
@@ -30,7 +34,14 @@ namespace Context
         public IWebElement FilterCancelledBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[15]/div/div/div/ul/li[4]"));
         public IWebElement FilterOkBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[15]/div/div/div/div/a[1]"));
         public IWebElement FilterResetBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[15]/div/div/div/div/a[2]"));
-
+        public IWebElement makeFundFavouriteBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/div[3]/div/div/div/div/div/div[1]/div[2]/div[2]/div/table/tbody/tr[1]/td[1]/button"));
+        public IWebElement makeFundFavouriteBtn1 => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/div[3]/div/div/div/div/div/div[1]/div[2]/div[2]/div/table/tbody/tr[1]/td[1]/button"));
+        public IWebElement FundOptions => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/div[3]/div/div/div/div/div/div[1]/div[2]/div[2]/div/table/tbody/tr[1]/td[4]/button"));
+        public IWebElement FundSendMessage => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[16]/div/div/ul/li[1]"));
+        public IWebElement FundSendMessageField => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[17]/div/div[2]/div/div[2]/div[2]/div/div/div/div[2]/textarea"));
+        public IWebElement CancelSendMessage => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[16]/div/div[2]/div/div[2]/div[3]/div/button[1]"));
+        public IWebElement SendMessageConfirm => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[16]/div/div[2]/div/div[2]/div[3]/div/button[2]"));
+        public IWebElement ViewMeetingRequestBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[15]/div/div/ul/li[5]"));
 
 
 
@@ -64,6 +75,12 @@ namespace Context
             serviceProvidersBtn.Click();
         }
 
+        public void FundOptionsForm()
+        {
+            FundOptions.Click();
+        }
+        
+
         public void SearchInFunds(string SearchWord)
         {
             searchInFundsField.SendKeys(SearchWord);
@@ -81,6 +98,15 @@ namespace Context
         public void CustomizeColumns()
         {
             customizeColumnsBtn.Click();
+        }
+
+        public void DragAndDropForm()
+        {
+            BroadStrategyGroup.Click();
+            Actions builder = new Actions(PropertiesCollection.driver);
+            System.Threading.Thread.Sleep(1000);
+            builder.DragAndDropToOffset(fromBroadStrategyGroup, 137 , 18).Perform();
+
         }
 
         public void showFavouriteFunds()
@@ -128,6 +154,36 @@ namespace Context
             FilterResetBtn.Click();
         }
 
+        public void MakeFundFavouriteForm()
+        {
+            makeFundFavouriteBtn.Click();
+            System.Threading.Thread.Sleep(2000);
+            makeFundFavouriteBtn1.Click();
+        }
+
+        public void MakeFundFavouriteAndSeeFavouriteFunds()
+        {
+            MakeFundFavouriteForm();
+            System.Threading.Thread.Sleep(2000);
+            showFavouriteFunds();
+        }
+
+        public void FilterFundsByPending()
+        {
+            FilterMenu();
+            FilterPending();
+            FilterOk();
+        }
+
+        public void SendMessageToFundForm()
+        {
+            FundOptions.Click();
+            System.Threading.Thread.Sleep(1000);
+            FundSendMessage.Click();
+            System.Threading.Thread.Sleep(1000);
+            FundSendMessageField.Click();
+            FundSendMessageField.SendKeys("Test Joni");
+        }
 
 
     }

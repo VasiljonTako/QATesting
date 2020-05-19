@@ -1,6 +1,7 @@
 ﻿using Context.AccountClasses;
 using Context.CompanyClasses;
 using Context.DashboardClasses;
+using Context.SummitsClasses;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -405,6 +406,8 @@ namespace Context
             CompanyColleagueEdit CompanyColleagueEdit1 = new CompanyColleagueEdit();
             CompanyColleagueEdit1.ColleagueYourselfActionsForm();
             System.Threading.Thread.Sleep(2000);
+            CompanyColleagueEdit1.ColleagueYourselfViewProfileForm();
+            System.Threading.Thread.Sleep(2000);
             CompanyColleagueEdit1.ColleagueYourselfEditProfileForm();
             System.Threading.Thread.Sleep(2000);
 
@@ -412,6 +415,57 @@ namespace Context
             personalSettings.EditPersonalSettingsMethod();
         }
 
+        [Test]
+        public void ExecuteTestDragAndDrop()
+        {
+            ExecuteTestToNextSummit();
+            System.Threading.Thread.Sleep(2000);
+            NextSummit draganddrop = new NextSummit();
+            draganddrop.CustomizeColumns();
+            System.Threading.Thread.Sleep(1000);
+            draganddrop.DragAndDropForm();
+
+        }
+
+        [Test]
+        public void ExecuteTestMakeFundFavouriteAndSeeFavouriteFunds()
+        {
+            ExecuteTestToNextSummit();
+            System.Threading.Thread.Sleep(2000);
+            NextSummit FavouriteFunds = new NextSummit();
+            FavouriteFunds.MakeFundFavouriteAndSeeFavouriteFunds();
+        }
+
+        [Test]
+        public void ExecuteTestFilterFundsByPendingAndSortByFundName()
+        {
+            ExecuteTestToNextSummit();
+            System.Threading.Thread.Sleep(2000);
+            NextSummit FilterFunds = new NextSummit();
+            FilterFunds.FilterFundsByPending();
+            System.Threading.Thread.Sleep(2000);
+            FilterFunds.sortByFundName();
+            System.Threading.Thread.Sleep(2000);
+            FilterFunds.sortByFundName();
+        }
+
+        [Test]
+        public void ExecuteTestSendMessageToFund()
+        {
+            ExecuteTestToNextSummit();
+            System.Threading.Thread.Sleep(2000);
+            NextSummit SendMessage = new NextSummit();
+            SendMessage.SendMessageToFundForm();
+        }
+
+        [Test]
+        public void ExecuteTestSeeHistory()
+        {
+            ExecuteTestToNextSummit();
+            System.Threading.Thread.Sleep(2000);
+            FundProfile hst = new FundProfile();
+            hst.SeeHistoryForm();
+        }
 
     }
 }
