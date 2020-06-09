@@ -12,19 +12,25 @@ namespace Context
     public class Dashboard
     {
 
-        public IWebElement toDashboard => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/aside/div/div[1]/ul/li[1]/a"));
-        public IWebElement toMeetings => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[1]/ul/li[2]/a"));
-        public IWebElement toMessages => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[1]/ul/li[3]/a"));
-        public IWebElement toSummits => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/aside/div/div[1]/ul/li[5]/a"));
-        public IWebElement toCalendar => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/aside/div/div[1]/ul/li[4]"));       
-        public IWebElement toCompany => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/aside/div/div[1]/ul/li[6]"));
+        public IWebElement toDashboard => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[1]/ul/li[1]"));
+        public IWebElement toMeetings => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[1]/ul/li[2]"));
+        public IWebElement toMessages => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[1]/ul/li[3]"));
+        public IWebElement toCalendar => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[1]/ul/li[4]"));
+        public IWebElement toSummits => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[1]/ul/li[5]"));
+        public IWebElement toContent => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[1]/ul/li[6]"));
+        public IWebElement toCompany => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[1]/ul/li[7]"));
         public IWebElement toAccountName => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/aside/div/div[2]/div"));
         public IWebElement toSettings => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/header/div/div[2]/div/div[1]/a"));
+        public IWebElement toCalendarNtfc => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/header/div/div[2]/div/div[2]/a"));
         public IWebElement toMessagesNtfc => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/header/div/div[2]/div/div[3]/a"));
         public IWebElement toNotifications => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/header/div/div[2]/div/div[4]/span"));
         public IWebElement meetingsStatsDdl => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div[1]/div[1]/div/div[1]/button"));
         public IWebElement meetingsStatsDdlSelect => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[3]/button"));
-        public IWebElement toNextSummit => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div[2]/div[1]/div[2]/div[2]/div/button"));
+        public IWebElement toNextSummit => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/section/section/main/div/div[2]/div[1]/div[2]/div[2]/div/button"));
+        public IWebElement toPrivacyPolicy => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/footer/div/a[1]"));
+        public IWebElement toTermsOfUse => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/footer/div/a[2]"));
+        public IWebElement toEventRegistration => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/footer/div/a[3]"));
+        public IWebElement toSubscriptionAndSeviceAgreement => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/footer/div/a[4]"));
 
 
         public void DashboardForm()
@@ -42,14 +48,19 @@ namespace Context
             toMessages.Click();
         }
 
+        public void CalendarForm()
+        {
+            toCalendar.Click();
+        }
+
         public void SummitsForm()
         {
             toSummits.Click();
         }
 
-        public void CalendarForm()
+        public void ContentForm()
         {
-            toCalendar.Click();
+            toContent.Click();
         }
 
         public void CompanyForm()
@@ -65,6 +76,11 @@ namespace Context
         public void toSettingsForm()
         {
             toSettings.Click();
+        }
+
+        public void CalendarNtfcForm()
+        {
+            toCalendarNtfc.Click();
         }
 
         public void MessagesNtfcForm()
@@ -90,6 +106,26 @@ namespace Context
         {
             System.Threading.Thread.Sleep(2000);
             toNextSummit.Click();
+        }
+
+        public void PrivacyPolicyForm()
+        {
+            toPrivacyPolicy.Click();
+        }
+
+        public void TermsOfUseForm()
+        {
+            toTermsOfUse.Click();
+        }
+
+        public void EventRegistrationForm()
+        {
+            toEventRegistration.Click();
+        }
+
+        public void SubscriptionAndSeviceAgreementForm()
+        {
+            toSubscriptionAndSeviceAgreement.Click();
         }
 
     }

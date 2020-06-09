@@ -33,12 +33,12 @@ namespace Context
             PropertiesCollection.driver.Navigate().GoToUrl("http://qa.context365.com");
         }
 
+
         [Test]
         public void ExecuteTestLogin()
         {
             Login pageLogin = new Login();
             pageLogin.LoginForm("thomas.peters@ccap.com");
-            System.Threading.Thread.Sleep(2000);
         }
 
         [Test]
@@ -465,6 +465,9 @@ namespace Context
             System.Threading.Thread.Sleep(2000);
             FundProfile hst = new FundProfile();
             hst.SeeHistoryForm();
+
+
+
         }
 
     }

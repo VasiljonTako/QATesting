@@ -15,6 +15,7 @@ namespace Context
         public IWebElement meetingsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[1]/div/div/div/div/div[1]/div[2]"));
         public IWebElement scheduleBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[1]/div/div/div/div/div[1]/div[3]"));
         public IWebElement agendaBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[1]/div/div/div/div/div[1]/div[4]"));
+        public IWebElement contentBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[1]/div/div/div/div/div[1]/div[5]"));
         public IWebElement fundsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[2]/div/div/label[1]"));
         public IWebElement serviceProvidersBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[2]/div/div/label[2]"));
         public IWebElement contextBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[2]/div/div/label[3]"));
@@ -22,6 +23,9 @@ namespace Context
         public IWebElement searchInFundsField => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/header/div/div[2]/span/input"));
         public IWebElement cancelSearchInFundsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/header/div/div[2]/span/span/i[1]"));
         public IWebElement customizeColumnsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[1]/section/section/main/div/div/div[3]/div[1]/div[3]/div[3]/div[1]/header/div/div[2]/button[1]"));
+        public IWebElement exitCustomizeColumnsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[21]/div/div[2]/div/div/div[1]"));
+        public IWebElement saveCustomizeColumnsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[21]/div/div[2]/div/div/div[2]/div/div[3]/button[1]"));
+        public IWebElement cancelCustomizeColumnsBtn => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[21]/div/div[2]/div/div/div[2]/div/div[3]/button[2]"));
         public IWebElement BroadStrategyGroup => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[16]/div/div[2]/div/div/div[2]/div/div[2]/div[2]/label/span[1]/input"));       
         public IWebElement fromBroadStrategyGroup => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[16]/div/div[2]/div/div/div[2]/div/div[2]/div[12]"));
         public IWebElement toSubStrategy => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div[16]/div/div[2]/div/div/div[2]/div/div[2]/div[6]"));
@@ -65,6 +69,11 @@ namespace Context
             agendaBtn.Click();
         }
 
+        public void goToContent()
+        {
+            contentBtn.Click();
+        }
+
         public void goToFunds()
         {
            fundsBtn.Click();
@@ -106,6 +115,7 @@ namespace Context
             Actions builder = new Actions(PropertiesCollection.driver);
             System.Threading.Thread.Sleep(1000);
             builder.DragAndDropToOffset(fromBroadStrategyGroup, 137 , 18).Perform();
+            saveCustomizeColumnsBtn.Click();
 
         }
 
@@ -183,6 +193,7 @@ namespace Context
             System.Threading.Thread.Sleep(1000);
             FundSendMessageField.Click();
             FundSendMessageField.SendKeys("Test Joni");
+            SendMessageConfirm.Click();
         }
 
 

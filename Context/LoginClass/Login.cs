@@ -6,11 +6,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Context
 {
-    class Login
+    public class Login
     {
         public IWebElement loginToEmail => PropertiesCollection.driver.FindElement(By.Name("email"));
         public IWebElement loginNext => PropertiesCollection.driver.FindElement(By.XPath("/html/body/div/div/div[2]/div/div[2]/div/form/div[2]/div/div[2]/button"));
@@ -31,9 +32,11 @@ namespace Context
             loginNext1.Click();
             System.Threading.Thread.Sleep(2000);
             loginNext2.Click();
-            System.Threading.Thread.Sleep(2000);
-            cancelRateMeeting.Click();
+            //System.Threading.Thread.Sleep(2000);
+            //cancelRateMeeting.Click();
 
         }
+
+        
     }
 }

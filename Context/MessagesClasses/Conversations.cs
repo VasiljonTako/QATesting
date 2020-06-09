@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Context
+namespace Context.MessagesClasses
 {
-   public class Attendees
+    class Conversations
     {
-
     }
 }

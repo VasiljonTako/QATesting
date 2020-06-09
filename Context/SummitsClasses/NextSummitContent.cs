@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Context
 {
-    public class Meetings
+    public class NextSummitContent
     {
+
+
+
     }
 }

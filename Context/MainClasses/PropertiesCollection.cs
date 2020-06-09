@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Context
@@ -15,8 +16,10 @@ namespace Context
 
     }
 
-    class PropertiesCollection
+    public class PropertiesCollection
     {
         public static IWebDriver driver {get; set; }
     }
+
+   
 }
